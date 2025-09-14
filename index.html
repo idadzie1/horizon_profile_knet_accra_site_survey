@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Horizontal Profiles</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- Load a specific version -->
+  <!-- <script src="https://cdn.plot.ly/plotly-3.1.0.min.js"></script> -->
+
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .container { display: flex; flex-direction: column; gap: 20px; }
+    .chart { flex: 1; height: 500px; }
+  </style>
+</head>
+<body>
+  <h2>Horizontal Profiles</h2>
+  <div class="container">     
+    <div id="flatProfile" class="chart"></div>      
+    <div id="polarProfile" class="chart"></div>
+  </div>
+
+  <script>
+    // Raw azimuth and elevation data
+    var azimuths = [0,30,37,60,90,120,150,180,185,210,240,270,300,330];
+    var elevations = [0,15,8,18,30,20,30,15,10,7,3,3,15,15];
+
+    // Flat Horizon Profile
+    var flatTrace = {
+      x: azimuths,
+      y: elevations,
+      type: "scatter",
+      mode: "lines+markers",
+      line: { shape: "spline", color: "deeppink", width: 3 },
+      fill: "tozeroy",
+      fillcolor: "rgba(255,182,193,0.4)",
+      marker: { color: "red", size: 6 },
+      name: "Flat Profile"
+    };
+
+    var flatLayout = {
+      title: "Flat Horizon Profile",
+      xaxis: { title: "Azimuth (°)", range: [0,360], dtick: 30 },
+      yaxis: { title: "Elevation (°)", zeroline: false },
+      plot_bgcolor: "white"
+    };
+
+    Plotly.newPlot("flatProfile", [flatTrace], flatLayout);
+
+    // Circular Horizon Profile
+    var polarTrace = {
+      type: "scatterpolar",
+      mode: "lines+markers",
+      r: elevations,
+      theta: azimuths,
+      line: { shape: "spline", color: "deeppink", width: 3 },
+      fill: "toself",
+      fillcolor: "rgba(255,182,193,0.4)",
+      marker: { color: "red", size: 6 },
+      name: "Circular Profile"
+    };
+
+    var polarLayout = {
+      title: "Circular Horizon Profile",
+      polar: {
+        radialaxis: { title: "Elevation (°)", angle: 90, range: [0, 40] },
+
+        angularaxis: { direction: "clockwise", rotation: 90, dtick: 30 }
+      }
+    };
+
+    Plotly.newPlot("polarProfile", [polarTrace], polarLayout);
+  </script>
+</body>
+</html>
