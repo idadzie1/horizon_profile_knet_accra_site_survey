@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Horizontal Profiles</title>
+  <title>Horizon Profile</title>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 
@@ -16,7 +16,7 @@
   </style>
 </head>
 <body>
-  <h2>Horizontal Profiles Location: KNET Accra, Ghana</h2>
+  <h2>Horizon Profile Location: KNET Accra, Ghana</h2>
   <div class="container">     
     <div id="flatProfile" class="chart"></div>      
     <div id="polarProfile" class="polarchart"></div>
@@ -47,7 +47,7 @@
     };
 
     var flatLayout = {
-      title: "Flat Horizontal Profile",
+      title: "Flat Horizon Profile",
       xaxis: { title: "Azimuth (°)", range: [0,360], dtick: 30 },
       yaxis: { title: "Elevation (°)", zeroline: false },
       plot_bgcolor: "white"
@@ -74,7 +74,7 @@
     };
 
     var polarLayout = {
-      title: "Circular Horizontal Profile",
+      title: "Circular Horizon Profile",
       polar: {
         radialaxis: { title: "Elevation (°)", angle: 90, range: [0, 40] },
         angularaxis: { direction: "clockwise", rotation: 90, dtick: 30 }
