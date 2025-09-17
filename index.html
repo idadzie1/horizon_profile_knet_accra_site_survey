@@ -10,13 +10,75 @@
     body { font-family: Arial, sans-serif; margin: 20px; }
     h2{width: 100%; text-align: center;}
     .container { display: flex; flex-direction: column; gap: 20px; }
-    .chart { height: 500px; }
-    .polarchart{ margin: auto; width: 600px; height: 600px;}
-    h6{ color: gray;}    
+    .chart {margin-top: 3rem; height: 500px; }
+    .polarchart{ margin: 3rem auto; width: 600px; height: 600px;}
+    h6{ color: gray;}
+    
+    table{
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+      margin: auto;
+    }
+
+    h5{
+      font-size: small; 
+      width: 100%; 
+      text-align: center;     
+
+    }
+
+    th{
+      
+      border-bottom: 1px solid;
+    }
+
+    td{
+      width: 2rem;
+      text-align: center;
+      border-left: 1px solid;
+      font-size: small;
+    }
   </style>
 </head>
 <body>
   <h2>Horizon Profile Location: KNET Accra, Ghana</h2>
+  <h5>Raw Data</h5>
+  <table>       
+    <tr>
+      <th>Azimuth°</th>
+      <td>0</td>
+      <td>30</td>
+      <td>37</td>
+      <td>60</td>
+      <td>90</td>
+      <td>120</td>
+      <td>150</td>
+      <td>180</td>
+      <td>185</td>
+      <td>210</td>
+      <td>240</td>
+      <td>270</td>
+      <td>300</td>
+      <td>330</td>
+    </tr>
+    <tr>
+      <th>Elevation°</th>
+      <td>0</td>
+      <td>15</td>
+      <td>8</td>
+      <td>18</td>
+      <td>30</td>
+      <td>20</td>
+      <td>30</td>
+      <td>15</td>
+      <td>10</td>
+      <td>7</td>
+      <td>3</td>
+      <td>3</td>
+      <td>15</td>
+      <td>15</td>
+    </tr>
+  </table>
   <div class="container">     
     <div id="flatProfile" class="chart"></div>      
     <div id="polarProfile" class="polarchart"></div>
@@ -24,8 +86,7 @@
   <h6>By Isu Mustapha Dadzie <br>
       email: dimustapha@gmail.com <br>
       phone: +233209453410
-  </h6>
-  
+  </h6> 
 
 
   <script>
