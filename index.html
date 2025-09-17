@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Horizon Profile</title>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
+  
+  <script src="https://cdn.plot.ly/plotly-3.1.0.min.js"></script>
 
   <style>
     body { font-family: Arial, sans-serif; margin: 20px; }
@@ -43,21 +43,22 @@
       fill: "tozeroy",
       fillcolor: "rgba(255,182,193,0.4)",
       marker: { color: "red", size: 6 },
-      name: "Flat Profile"
+      name: "Flat Profile"       
     };
 
-    var flatLayout = {
-      title: "Flat Horizon Profile",
-      xaxis: { title: "Azimuth (°)", range: [0,360], dtick: 30 },
-      yaxis: { title: "Elevation (°)", zeroline: false },
-      plot_bgcolor: "white"
+    var flatLayout = {      
+      title: { text: "Flat Horizon Profile", font: { size: 20 } },
+      margin: { t: 60, l: 60, r: 40, b: 40 },
+      xaxis: { title: {text: "Azimuth (°)"}, range: [0,360], dtick: 30 },
+      yaxis: { title: {text: "Elevation (°)"}, zeroline: false },
+      plot_bgcolor: "white",
+      dragmode: false
     };
 
     Plotly.newPlot("flatProfile", [flatTrace], flatLayout, {
-    scrollZoom: false,   // disable pinch zoom
-    doubleClick: false,  // disable double-tap zoom
-    displayModeBar: false, // hide toolbar (optional)
-    dragMode: false      // no dragging
+      scrollZoom: false,
+      doubleClick: false,
+      displayModeBar: false
     });
 
     // Circular Horizon Profile
@@ -74,21 +75,21 @@
     };
 
     var polarLayout = {
-      title: "Circular Horizon Profile",
-      polar: {
-        radialaxis: { title: "Elevation (°)", angle: 90, range: [0, 40] },
+        dragmode: false,      
+        title: { text: "Circular Horizon Profile", font: { size: 20 } },
+        margin: { t: 60, l: 60, r: 60, b: 60 },
+        polar: {
+        radialaxis: { title:{ text: "Elevation (°)"}, automargin: true, angle: 90, range: [0, 40] },
         angularaxis: { direction: "clockwise", rotation: 90, dtick: 30 }
       }
     };
 
     Plotly.newPlot("polarProfile", [polarTrace], polarLayout, {
-    scrollZoom: false,   // disable pinch zoom
-    doubleClick: false,  // disable double-tap zoom
-    displayModeBar: false, // hide toolbar (optional)
-    dragMode: false      // no dragging
-    });
-  </script>
-
+      scrollZoom: false,
+      doubleClick: false,
+      displayModeBar: true
   
+    });
+  </script>  
 </body>
 </html>
