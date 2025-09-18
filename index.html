@@ -13,6 +13,10 @@
     .chart {margin-top: 3rem; height: 500px; }
     .polarchart{ margin: 3rem auto; width: 600px; height: 600px;}
     h6{ color: gray;}
+
+    .raw-data{
+      margin-top: 2rem;
+    }
     
     table{   
       margin: auto;
@@ -30,6 +34,8 @@
     th{
       
       border-bottom: 1px solid;
+      font-size: small;
+      font-weight: 100;
     }
 
     td{
@@ -47,50 +53,113 @@
     tr:last-child td{
       border-bottom: none;
     }
+
+   .site-details{
+     width: 50%;
+     margin: auto;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+   }
+
+   .address{
+    /* border: 1px solid; */
+   }
+
+   h4, p{
+    padding: 0;
+    margin: 0;
+   }
+
+   p{
+     font-size: small;
+   }
+
+   
   </style>
 </head>
 <body>
-  <h2>Horizon Profile Location: KNET Accra, Ghana</h2>
-  <h5>Raw Data</h5>
-  <table>       
-    <tr>
-      <th>Azimuth°</th>
-      <td>0</td>
-      <td>30</td>
-      <td>37</td>
-      <td>60</td>
-      <td>90</td>
-      <td>120</td>
-      <td>150</td>
-      <td>180</td>
-      <td>185</td>
-      <td>210</td>
-      <td>240</td>
-      <td>270</td>
-      <td>300</td>
-      <td>330</td>
-    </tr>
-    <tr>
-      <th>Elevation°</th>
-      <td>0</td>
-      <td>15</td>
-      <td>8</td>
-      <td>18</td>
-      <td>30</td>
-      <td>20</td>
-      <td>30</td>
-      <td>15</td>
-      <td>10</td>
-      <td>7</td>
-      <td>3</td>
-      <td>3</td>
-      <td>15</td>
-      <td>15</td>
-    </tr>
-  </table>
+  <h2>Horizon Profile: KNET Accra, Ghana</h2>
+  <div class="site-details">
+    <div class="address">
+      <h4>Location address</h4>
+      <p>No.12 Roman Ridge Street,<br> Roman Ridge,<br> Accra, Ghana</p>
+    </div>
+    <div class="gps-location">
+      <h4>GPS Location</h4> 
+      <p>5°N, .0005°W</p>
+    </div>
+  </div>
+
+  <div class="raw-data">  
+    <h5>Field Dataset</h5> 
+    <table>          
+      <tr>
+        <th>Azimuth°</th>
+        <td>0</td>
+        <td>30</td>
+        <td>37</td>
+        <td>60</td>
+        <td>90</td>
+        <td>120</td>
+        <td>150</td>
+        <td>180</td>
+        <td>185</td>
+        <td>210</td>
+        <td>240</td>
+        <td>270</td>
+        <td>300</td>
+        <td>330</td>
+      </tr>
+      <tr>
+        <th>Elevation°</th>
+        <td>0</td>
+        <td>15</td>
+        <td>8</td>
+        <td>18</td>
+        <td>30</td>
+        <td>20</td>
+        <td>30</td>
+        <td>15</td>
+        <td>10</td>
+        <td>7</td>
+        <td>3</td>
+        <td>3</td>
+        <td>15</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <th>Distance(m)</th>
+        <td>3</td>
+        <td>5</td>
+        <td>10</td>
+        <td>9</td>
+        <td>25</td>
+        <td>30</td>
+        <td>52</td>
+        <td>15</td>
+        <td>10</td>
+        <td>11</td>
+        <td>100</td>
+        <td>45</td>
+        <td>47</td>
+        <td>10</td>
+      </tr>
+    </table>
+  </div>
   <div class="container">     
     <div id="flatProfile" class="chart"></div>      
     <div id="polarProfile" class="polarchart"></div>
+  </div>
+  <div class="analysis">
+    <h3>Observations and Analysis</h3>
+    <div class="lists">
+      <ul>
+        <li>The northern and eastern sectors (0°-90° azimuth) are largely clear, with maximum obstruction at 3° elevation</li>
+        <li>Southern sector (120°-200° azimuth) has significant obstruction from nearby high-rise buildings, rising up to 15°.</li>
+        <li>Western sector (270°-320° azimuth) shows moderate obstruction due to vegetation and terrain (8°-10°).</li>
+      </ul>
+    </div>
   </div>
   <h6>By Isu Mustapha Dadzie <br>
       email: dimustapha@gmail.com <br>
